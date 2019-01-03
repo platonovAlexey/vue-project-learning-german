@@ -1,4 +1,4 @@
-# learningGerman
+# Vue project Learning German
 
 ## Project setup
 ```
