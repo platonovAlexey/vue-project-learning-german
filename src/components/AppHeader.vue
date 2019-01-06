@@ -39,17 +39,16 @@
           }
         },
         computed: {
+          isUserAuthenticated () {
+            return this.$store.getters.isUserAuthenticated
+          },
           menuItems () {
-            return [
+            return this.isUserAuthenticated
+              ? [
               {
                 icon: 'visibility',
                 title: 'Читать',
                 route: '/books'
-              },
-              {
-                icon: 'extension',
-                title: 'Учить слова',
-                route: '/words'
               },
               {
                 icon: 'account_circle',
@@ -60,6 +59,13 @@
                 icon: 'exit_to_app',
                 title: 'Выйти',
                 route: '/logout'
+              },
+            ] :
+            [
+              {
+                icon: 'visibility',
+                title: 'Читать',
+                route: '/books'
               },
               {
                 icon: 'input',

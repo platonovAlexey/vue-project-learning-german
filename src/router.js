@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import Books from '@/components/Books.vue';
-import Words from '@/components/Words.vue';
-import Profile from '@/components/Profile.vue';
-import Signin from '@/components/Signin.vue';
-import Signup from '@/components/Signup.vue';
+import Books from './views/Books.vue';
+import Words from './views/Words.vue';
+import Profile from './views/Profile.vue';
+import Signin from './views/Signin.vue';
+import Signup from './views/Signup.vue';
 
 Vue.use(Router);
 
