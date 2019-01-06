@@ -22,9 +22,9 @@ export default {
   actions: {
     signUp({ commit }, payload) {
       commit('setProcessing', true);
+      commit('clearError');
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
         .then((user) => {
-          commit('setUser', user.uid);
           commit('setProcessing', false);
         })
         .catch((error) => {
@@ -34,9 +34,9 @@ export default {
     },
     signIn({ commit }, payload) {
       commit('setProcessing', true);
+      commit('clearError');
       firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
         .then((user) => {
-          commit('setUser', user.uid);
           commit('setProcessing', false);
         })
         .catch((error) => {
@@ -50,6 +50,9 @@ export default {
       } else {
         commit('unsetUser');
       }
+    },
+    signOut() {
+      firebase.auth().signOut();
     },
   },
   getters: {

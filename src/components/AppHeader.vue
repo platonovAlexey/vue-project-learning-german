@@ -25,6 +25,10 @@
           <v-icon left v-html="item.icon"></v-icon>
           {{item.title}}
           </v-btn>
+          <v-btn flat @click.prevent="signout" v-if="isUserAuthenticated">
+          <v-icon left>exit_to_app'</v-icon>
+          Выйти
+          </v-btn>
         </v-toolbar-items>
       </v-toolbar>
   </div>
@@ -35,7 +39,15 @@
         name: 'AppHeader',
         data () {
           return {
+            dialog: false,
             drawer: false
+          }
+        },
+        methods: {
+          signout () {
+            this.$confirm('Точно ?', {title: 'Вы уже уходите ?', color: 'info', icon: 'info',}).then(res => {
+              if (res) this.$store.dispatch('signOut')
+            })
           }
         },
         computed: {
@@ -54,11 +66,6 @@
                 icon: 'account_circle',
                 title: 'Мой кабинет',
                 route: '/profile'
-              },
-              {
-                icon: 'exit_to_app',
-                title: 'Выйти',
-                route: '/logout'
               },
             ] :
             [
