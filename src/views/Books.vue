@@ -1,12 +1,15 @@
 <template>
     <div>
-        <h1>Books</h1>
+        <BooksList />
     </div>
 </template>
 
 <script>
+import BooksList from '../components/BooksList'
     export default {
-        
+        components: {
+            BooksList
+        }
     }
 </script>
 
