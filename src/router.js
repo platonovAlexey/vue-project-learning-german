@@ -3,6 +3,8 @@ import Router from 'vue-router';
 import firebase from 'firebase';
 import Home from './views/Home.vue';
 import Books from './views/Books.vue';
+import Book from './views/Book.vue';
+import BookPart from './views/BookPart.vue';
 import Words from './views/Words.vue';
 import Profile from './views/Profile.vue';
 import Signin from './views/Signin.vue';
@@ -24,6 +26,18 @@ export default new Router({
       path: '/books',
       name: 'books',
       component: Books,
+    },
+    {
+      path: '/book/:id',
+      name: 'book',
+      props: true,
+      component: Book,
+    },
+    {
+      path: '/book/:bookId/part/:partId',
+      name: 'bookPart',
+      props: true,
+      component: BookPart,
     },
     {
       path: '/words',
