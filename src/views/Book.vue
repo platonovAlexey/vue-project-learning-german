@@ -4,7 +4,7 @@
       <v-flex xs12 sm10 offset-sm1>
         <book-details :book="book"></book-details>
       </v-flex>
-      <v-flex v-for="(part, index) in book.parts" :key="index" xs12 sm10 offset-sm1>
+      <v-flex v-for="part in book.parts" :key="part.id" xs12 sm10 offset-sm1>
         <book-part-list-item :part="part" :bookId="book.id"></book-part-list-item>
       </v-flex>
     </v-layout>

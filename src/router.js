@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import Home from './views/Home.vue';
 import Books from './views/Books.vue';
 import Book from './views/Book.vue';
+// eslint-disable-next-line import/no-unresolved
 import BookPart from './views/BookPart.vue';
 import Words from './views/Words.vue';
 import Profile from './views/Profile.vue';

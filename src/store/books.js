@@ -12,24 +12,24 @@ export default {
         youtube_playlist_id: 'sdfsfse',
         parts: [
           {
-            id: '345terds',
+            id: '145terds1',
             title: 'Kapitel 1',
-            youtube_id: 'dsafafafa',
+            youtube_id: '1dsafafafa1',
           },
           {
-            id: '345terds2',
+            id: '145terds2',
             title: 'Kapitel 2',
-            youtube_id: 'dsafafafa2',
+            youtube_id: '1dsafafafa2',
           },
           {
-            id: '345terds3',
+            id: '145terds3',
             title: 'Kapitel 3',
-            youtube_id: 'dsafafafa3',
+            youtube_id: '1dsafafafa3',
           },
           {
-            id: '345terds3',
-            title: 'Kapitel 3',
-            youtube_id: 'dsafafafa3',
+            id: '145terds4',
+            title: 'Kapitel 4',
+            youtube_id: '1dsafafafa4',
           },
         ],
       },
@@ -44,24 +44,24 @@ export default {
         youtube_playlist_id: 'sdfsfsefsfs',
         parts: [
           {
-            id: '345terds',
+            id: '2345terds1',
             title: 'Kapitel 1',
-            youtube_id: 'dsafafafa',
+            youtube_id: '2dsafafafa1',
           },
           {
-            id: '345terds2',
+            id: '2345terds2',
             title: 'Kapitel 2',
-            youtube_id: 'dsafafafa2',
+            youtube_id: '2dsafafafa2',
           },
           {
-            id: '345terds3',
+            id: '2345terds3',
             title: 'Kapitel 3',
-            youtube_id: 'dsafafafa3',
+            youtube_id: '2dsafafafa3',
           },
           {
-            id: '345terds3',
-            title: 'Kapitel 3',
-            youtube_id: 'dsafafafa3',
+            id: '2345terds4',
+            title: 'Kapitel 4',
+            youtube_id: '2dsafafafa4',
           },
         ],
       },
@@ -76,33 +76,33 @@ export default {
         youtube_playlist_id: 'sdfsfsefsfsetyyy',
         parts: [
           {
-            id: '345terds',
+            id: 'dfsdfsdfsfAA',
             title: 'Kapitel 1',
-            youtube_id: 'dsafafafa',
+            youtube_id: '3dsafafafa1',
           },
           {
-            id: '345terds2',
+            id: '3345terds2',
             title: 'Kapitel 2',
-            youtube_id: 'dsafafafa2',
+            youtube_id: '3dsafafafa2',
           },
           {
-            id: '345terds3',
+            id: '3345terds3',
             title: 'Kapitel 3',
-            youtube_id: 'dsafafafa3',
+            youtube_id: '3dsafafafa3',
           },
           {
-            id: '345terds3',
-            title: 'Kapitel 3',
-            youtube_id: 'dsafafafa3',
+            id: '3345terds4',
+            title: 'Kapitel 4',
+            youtube_id: '3dsafafafa4',
           },
         ],
       },
     ],
-
     bookParts: [
       {
+        // bookId: 'dfsdfsfsfsfsaaaaaBB',
         bookId: 'dfsdfsfsfsfsaaaaa',
-        bookPartId: '345terds',
+        bookPartId: 'dfsdfsdfsfAA',
         bookTitle: 'Harry Potter und der Stein Weisen - 3',
         partTitle: 'Kapitel 1',
         youtube_id: 'u4DUmKFScvU',
@@ -192,6 +192,6 @@ export default {
   },
   getters: {
     getBooks: state => state.books,
-    getParts: state => state.bookParts
+    getParts: state => state.bookParts,
   },
 };
