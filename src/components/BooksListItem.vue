@@ -3,7 +3,7 @@
     <v-container fluid>
       <v-layout row class="hidden-sm-and-down">
         <v-flex xs4 md3>
-          <v-card-media height="100px" src="https://st.kp.yandex.net/images/film_iphone/iphone360_689.jpg">
+          <v-card-media height="100px" :src="book.imageUrl">
           </v-card-media>
           <div class="text-xs-center">
             <v-btn flat color="white">
@@ -21,11 +21,11 @@
             </div>
           </v-card-title>
           <v-card-actions>
-            <v-rating v-model="book.rating" color="yellow" readonly dense half-increments></v-rating>
+            <!-- <v-rating v-model="book.rating" color="yellow" readonly dense half-increments></v-rating>
             <div class="ml-1">
               <span>{{book.rating}}</span>
               <span>({{book.ratingCount}})</span>
-            </div>
+            </div> -->
             <v-spacer></v-spacer>
             <v-btn class="primary" flat :to="{name: 'book', params: {id: book.id}}">Открыть</v-btn>
           </v-card-actions>
@@ -35,7 +35,7 @@
       <div class="hidden-md-and-up">
         <v-layout row>
           <v-flex xs4 md3>
-            <v-card-media height="100px" src="https://st.kp.yandex.net/images/film_iphone/iphone360_689.jpg">
+            <v-card-media height="100px" :src="book.imageUrl">
             </v-card-media>
           </v-flex>
           <v-flex xs8 md9>
@@ -62,11 +62,11 @@
         <v-layout>
           <v-flex x12>
             <v-card-actions>
-            <v-rating v-model="book.rating" color="yellow" readonly dense half-increments></v-rating>
+            <!-- <v-rating v-model="book.rating" color="yellow" readonly dense half-increments></v-rating>
             <div class="ml-1">
               <span>{{book.rating}}</span>
               <span>({{book.ratingCount}})</span>
-            </div>
+            </div> -->
             <v-spacer></v-spacer>
             <v-btn class="primary" flat :to="{name: 'book', params: {id: book.id}}>Открыть</v-btn>
           </v-card-actions>

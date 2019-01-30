@@ -1,103 +1,106 @@
+import Vue from 'vue';
+
 export default {
   state: {
-    books: [
-      {
-        id: 'dfsdfs',
-        title: 'Harry Potter und der Stein Weisen - 1',
-        description: 'Первая глава первой книги о Гарри Поттере',
-        image: 'dfgsgs',
-        level: ['B2', 'C1'],
-        rating: 4,
-        ratingCount: 100,
-        youtube_playlist_id: 'sdfsfse',
-        parts: [
-          {
-            id: '145terds1',
-            title: 'Kapitel 1',
-            youtube_id: '1dsafafafa1',
-          },
-          {
-            id: '145terds2',
-            title: 'Kapitel 2',
-            youtube_id: '1dsafafafa2',
-          },
-          {
-            id: '145terds3',
-            title: 'Kapitel 3',
-            youtube_id: '1dsafafafa3',
-          },
-          {
-            id: '145terds4',
-            title: 'Kapitel 4',
-            youtube_id: '1dsafafafa4',
-          },
-        ],
-      },
-      {
-        id: 'dfsdfsfsfsfs',
-        title: 'Harry Potter und der Stein Weisen - 2',
-        description: 'Вторая глава первой книги о Гарри Поттере',
-        image: 'dfgsgaaaaweer',
-        level: ['A2', 'B2'],
-        rating: 3.5,
-        ratingCount: 65,
-        youtube_playlist_id: 'sdfsfsefsfs',
-        parts: [
-          {
-            id: '2345terds1',
-            title: 'Kapitel 1',
-            youtube_id: '2dsafafafa1',
-          },
-          {
-            id: '2345terds2',
-            title: 'Kapitel 2',
-            youtube_id: '2dsafafafa2',
-          },
-          {
-            id: '2345terds3',
-            title: 'Kapitel 3',
-            youtube_id: '2dsafafafa3',
-          },
-          {
-            id: '2345terds4',
-            title: 'Kapitel 4',
-            youtube_id: '2dsafafafa4',
-          },
-        ],
-      },
-      {
-        id: 'dfsdfsfsfsfsaaaaa',
-        title: 'Harry Potter und der Stein Weisen - 3',
-        description: 'Третья глава первой книги о Гарри Поттере',
-        image: 'dfgsgsdfsdfs',
-        level: ['A1'],
-        rating: 2,
-        ratingCount: 77,
-        youtube_playlist_id: 'sdfsfsefsfsetyyy',
-        parts: [
-          {
-            id: 'dfsdfsdfsfAA',
-            title: 'Kapitel 1',
-            youtube_id: '3dsafafafa1',
-          },
-          {
-            id: '3345terds2',
-            title: 'Kapitel 2',
-            youtube_id: '3dsafafafa2',
-          },
-          {
-            id: '3345terds3',
-            title: 'Kapitel 3',
-            youtube_id: '3dsafafafa3',
-          },
-          {
-            id: '3345terds4',
-            title: 'Kapitel 4',
-            youtube_id: '3dsafafafa4',
-          },
-        ],
-      },
-    ],
+    books: [],
+    // books: [
+    //   {
+    //     id: 'dfsdfs',
+    //     title: 'Harry Potter und der Stein Weisen - 1',
+    //     description: 'Первая глава первой книги о Гарри Поттере',
+    //     image: 'dfgsgs',
+    //     level: ['B2', 'C1'],
+    //     rating: 4,
+    //     ratingCount: 100,
+    //     youtube_playlist_id: 'sdfsfse',
+    //     parts: [
+    //       {
+    //         id: '145terds1',
+    //         title: 'Kapitel 1',
+    //         youtube_id: '1dsafafafa1',
+    //       },
+    //       {
+    //         id: '145terds2',
+    //         title: 'Kapitel 2',
+    //         youtube_id: '1dsafafafa2',
+    //       },
+    //       {
+    //         id: '145terds3',
+    //         title: 'Kapitel 3',
+    //         youtube_id: '1dsafafafa3',
+    //       },
+    //       {
+    //         id: '145terds4',
+    //         title: 'Kapitel 4',
+    //         youtube_id: '1dsafafafa4',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     id: 'dfsdfsfsfsfs',
+    //     title: 'Harry Potter und der Stein Weisen - 2',
+    //     description: 'Вторая глава первой книги о Гарри Поттере',
+    //     image: 'dfgsgaaaaweer',
+    //     level: ['A2', 'B2'],
+    //     rating: 3.5,
+    //     ratingCount: 65,
+    //     youtube_playlist_id: 'sdfsfsefsfs',
+    //     parts: [
+    //       {
+    //         id: '2345terds1',
+    //         title: 'Kapitel 1',
+    //         youtube_id: '2dsafafafa1',
+    //       },
+    //       {
+    //         id: '2345terds2',
+    //         title: 'Kapitel 2',
+    //         youtube_id: '2dsafafafa2',
+    //       },
+    //       {
+    //         id: '2345terds3',
+    //         title: 'Kapitel 3',
+    //         youtube_id: '2dsafafafa3',
+    //       },
+    //       {
+    //         id: '2345terds4',
+    //         title: 'Kapitel 4',
+    //         youtube_id: '2dsafafafa4',
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     id: 'dfsdfsfsfsfsaaaaa',
+    //     title: 'Harry Potter und der Stein Weisen - 3',
+    //     description: 'Третья глава первой книги о Гарри Поттере',
+    //     image: 'dfgsgsdfsdfs',
+    //     level: ['A1'],
+    //     rating: 2,
+    //     ratingCount: 77,
+    //     youtube_playlist_id: 'sdfsfsefsfsetyyy',
+    //     parts: [
+    //       {
+    //         id: 'dfsdfsdfsfAA',
+    //         title: 'Kapitel 1',
+    //         youtube_id: '3dsafafafa1',
+    //       },
+    //       {
+    //         id: '3345terds2',
+    //         title: 'Kapitel 2',
+    //         youtube_id: '3dsafafafa2',
+    //       },
+    //       {
+    //         id: '3345terds3',
+    //         title: 'Kapitel 3',
+    //         youtube_id: '3dsafafafa3',
+    //       },
+    //       {
+    //         id: '3345terds4',
+    //         title: 'Kapitel 4',
+    //         youtube_id: '3dsafafafa4',
+    //       },
+    //     ],
+    //   },
+    // ],
     bookParts: [
       {
         // bookId: 'dfsdfsfsfsfsaaaaaBB',
@@ -193,5 +196,31 @@ export default {
   getters: {
     getBooks: state => state.books,
     getParts: state => state.bookParts,
+  },
+  actions: {
+    loadBooks({ commit }) {
+      Vue.$db.collection('books')
+        .get()
+        .then((querySnapshot) => {
+          const books = [];
+          querySnapshot.forEach((s) => {
+            const data = s.data();
+            const book = {
+              id: s.id,
+              title: data.title,
+              description: data.description,
+              imageUrl: data.imageUrl,
+              level: data.level.slice(),
+              youtube_playlist_id: data.youtube_playlist_id,
+              parts: [],
+            };
+
+            books.push(book);
+          });
+
+          commit('setBooks', books)
+        })
+        .catch(error => console.log(error));
+    },
   },
 };
