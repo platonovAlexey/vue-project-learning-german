@@ -12,9 +12,15 @@
 </template>
 
 <script>
+  import Vue from 'vue'
   import BookPartContent from '../components/BookPartContent'
   import BookPartWords from '../components/BookPartWords'
   export default {
+    data () {
+      return {
+        part: null
+      }
+    },
     props: {
       'bookId': {
         type: String,
@@ -30,15 +36,24 @@
       BookPartWords
     },
     computed: {
-      part () {
-        let val = this.$store.getters.getParts.find(b => b.bookId === this.bookId && b.bookPartId === this.partId)
-        // console.log('val', val)
-        return val
-      }
+      // part () {
+      //   let val = this.$store.getters.getParts.find(b => b.bookId === this.bookId && b.bookPartId === this.partId)
+      //   // console.log('val', val)
+      //   return val
+      // }
     },
     created () {
-      // console.log('bookId', this.bookId)
-      // console.log('partId', this.partId)
+      console.log(Vue.$db.collection('bookParts'))
+      Vue.$db.collection('bookParts')
+          .where('bookId', '==', this.bookId)
+          .where('bookPartId', '==', this.partId)
+          .get()
+          .then(querySnapshot => {
+            querySnapshot.forEach(s => {
+              this.part = s.data()
+            })
+          })
+          .catch(error => console.log(error))
     }
   }
 </script>

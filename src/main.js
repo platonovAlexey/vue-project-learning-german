@@ -29,7 +29,7 @@ db.settings({
   timestampsInSnapshots: true,
 });
 
-Vue.$db = db
+Vue.$db = db;
 
 new Vue({
   router,

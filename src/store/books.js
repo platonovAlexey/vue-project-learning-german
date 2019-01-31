@@ -101,92 +101,92 @@ export default {
     //     ],
     //   },
     // ],
-    bookParts: [
-      {
-        // bookId: 'dfsdfsfsfsfsaaaaaBB',
-        bookId: 'dfsdfsfsfsfsaaaaa',
-        bookPartId: 'dfsdfsdfsfAA',
-        bookTitle: 'Harry Potter und der Stein Weisen - 3',
-        partTitle: 'Kapitel 1',
-        youtube_id: 'u4DUmKFScvU',
-        content: [
-          {
-            sentences: [
-              {
-                origText: 'Este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective.',
-                transText: 'это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
-              },
-              {
-                origText: 'Nu doar că a supravieţuit timp de cinci secole, dar şi a facut saltul în tipografia electronică practic neschimbată. A fost popularizată în',
-                transText: 'В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только',
-              },
-              {
-                origText: 'anii "60 odată cu ieşirea colilor Letraset care conţineau pasaje Lorem Ipsum, ',
-                transText: 'успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов ',
-              },
-              {
-                origText: 'iar mai recent, prin programele de publicare pentru calculator, ca Aldus PageMaker care includeau versiuni de Lorem Ipsum.',
-                transText: 'Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.',
-              },
-            ],
-          },
-          {
-            sentences: [
-              {
-                origText: '1 Este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective.',
-                transText: '1 это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
-              },
-              {
-                origText: '2 Este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective.',
-                transText: '2 это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
-              },
-              {
-                origText: '3 Este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective.',
-                transText: '3 это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
-              },
-              {
-                origText: '4 Este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective.',
-                transText: '4 это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
-              },
-            ],
-          },
-        ],
-        words: [
-          {
-            origWord: 'Hellow',
-            transWord: 'Привет',
-          },
-          {
-            origWord: 'Hello2',
-            transWord: 'Привет2',
-          },
-          {
-            origWord: 'Hellow3',
-            transWord: 'Привет3',
-          },
-          {
-            origWord: 'Hello4',
-            transWord: 'Привет4',
-          },
-          {
-            origWord: 'Hellow5',
-            transWord: 'Привет5',
-          },
-          {
-            origWord: 'Hellow6',
-            transWord: 'Привет6',
-          },
-          {
-            origWord: 'Hellow7',
-            transWord: 'Привет7',
-          },
-          {
-            origWord: 'Hellow8',
-            transWord: 'Привет8',
-          },
-        ],
-      },
-    ],
+    // bookParts: [
+    //   {
+    //     // bookId: 'dfsdfsfsfsfsaaaaaBB',
+    //     bookId: 'dfsdfsfsfsfsaaaaa',
+    //     bookPartId: 'dfsdfsdfsfAA',
+    //     bookTitle: 'Harry Potter und der Stein Weisen - 3',
+    //     partTitle: 'Kapitel 1',
+    //     youtube_id: 'u4DUmKFScvU',
+    //     content: [
+    //       {
+    //         sentences: [
+    //           {
+    //             origText: 'Este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective.',
+    //             transText: 'это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
+    //           },
+    //           {
+    //             origText: 'Nu doar că a supravieţuit timp de cinci secole, dar şi a facut saltul în tipografia electronică practic neschimbată. A fost popularizată în',
+    //             transText: 'В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки образцов. Lorem Ipsum не только',
+    //           },
+    //           {
+    //             origText: 'anii "60 odată cu ieşirea colilor Letraset care conţineau pasaje Lorem Ipsum, ',
+    //             transText: 'успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн. Его популяризации в новое время послужили публикация листов ',
+    //           },
+    //           {
+    //             origText: 'iar mai recent, prin programele de publicare pentru calculator, ca Aldus PageMaker care includeau versiuni de Lorem Ipsum.',
+    //             transText: 'Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется Lorem Ipsum.',
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         sentences: [
+    //           {
+    //             origText: '1 Este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective.',
+    //             transText: '1 это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
+    //           },
+    //           {
+    //             origText: '2 Este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective.',
+    //             transText: '2 это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
+    //           },
+    //           {
+    //             origText: '3 Este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective.',
+    //             transText: '3 это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
+    //           },
+    //           {
+    //             origText: '4 Este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective.',
+    //             transText: '4 это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.',
+    //           },
+    //         ],
+    //       },
+    //     ],
+    //     words: [
+    //       {
+    //         origWord: 'Hellow',
+    //         transWord: 'Привет',
+    //       },
+    //       {
+    //         origWord: 'Hello2',
+    //         transWord: 'Привет2',
+    //       },
+    //       {
+    //         origWord: 'Hellow3',
+    //         transWord: 'Привет3',
+    //       },
+    //       {
+    //         origWord: 'Hello4',
+    //         transWord: 'Привет4',
+    //       },
+    //       {
+    //         origWord: 'Hellow5',
+    //         transWord: 'Привет5',
+    //       },
+    //       {
+    //         origWord: 'Hellow6',
+    //         transWord: 'Привет6',
+    //       },
+    //       {
+    //         origWord: 'Hellow7',
+    //         transWord: 'Привет7',
+    //       },
+    //       {
+    //         origWord: 'Hellow8',
+    //         transWord: 'Привет8',
+    //       },
+    //     ],
+    //   },
+    // ],
   },
   mutations: {
     setBooks(state, payload) {
@@ -195,7 +195,6 @@ export default {
   },
   getters: {
     getBooks: state => state.books,
-    getParts: state => state.bookParts,
   },
   actions: {
     loadBooks({ commit }) {
@@ -212,13 +211,27 @@ export default {
               imageUrl: data.imageUrl,
               level: data.level.slice(),
               youtube_playlist_id: data.youtube_playlist_id,
-              parts: [],
             };
+
+            const parts = [];
+            if (data.parts) {
+              data.parts.forEach((p) => {
+                const part = {
+                  id: p.id,
+                  title: p.title,
+                  youtube_id: p.youtube_id,
+                };
+
+                parts.push(part);
+              });
+            }
+
+            book.parts = parts;
 
             books.push(book);
           });
 
-          commit('setBooks', books)
+          commit('setBooks', books);
         })
         .catch(error => console.log(error));
     },
