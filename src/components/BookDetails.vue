@@ -27,7 +27,15 @@
               <span>({{book.ratingCount}})</span>
             </div> -->
             <v-spacer></v-spacer>
-            <v-btn class="primary" flat>Загрузить</v-btn>
+            <v-btn class="primary"
+                   flat
+                   v-if="canLoadBook(book.id)"
+                   @click="loadBook(book.id)">Загрузить
+            </v-btn>
+            <div v-if="getUserDataBook(book.id)">
+              <v-icon color="white" class="book-download-icon">work outline</v-icon>
+              Книга скачана {{getBookAddedDate(book.id)}}
+            </div>
           </v-card-actions>
         </v-flex>
       </v-layout>
@@ -79,6 +87,7 @@
 
 <script>
   import * as bookHelper from '../helpers/book'
+  import { mapGetters } from 'vuex'
 
   export default {
     props: {
@@ -87,12 +96,39 @@
         required: true
       }
     },
+    created () {
+      console.log('this.getProcessing', this.getProcessing)
+    },
+    computed: {
+      ...mapGetters(['isUserAuthenticated', 'userData', 'getProcessing'])
+    },
     methods: {
-      getBookLevel: bookHelper.getBookLevel
-    }
+      getBookLevel: bookHelper.getBookLevel,
+      canLoadBook (bookId) {
+        let book = this.getUserDataBook(bookId)
+        return this.isUserAuthenticated && !this.getProcessing && !book
+      },
+      getUserDataBook (bookId) {
+        // console.log('getUserDataBook', bookId)
+        return this.userData.books[bookId]
+      },
+      loadBook (bookId) {
+        // console.log('loadBook', bookId)
+        this.$store.dispatch('addUserBook', bookId)
+      },
+      getBookAddedDate (bookId) {
+        let book = this.getUserDataBook(bookId)
+        return book.addedDate.toLocaleDateString()
+      }
+    },
   }
 </script>
 
 <style scoped>
-
+.book-download-icon{
+  width: 24px;
+  height: 24px;
+  text-align: right !important;
+  justify-content: flex-start !important;
+}
 </style>

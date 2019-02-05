@@ -44,9 +44,10 @@ export default {
           commit('setError', error.message);
         });
     },
-    stateChanged({ commit }, payload) {
+    stateChanged({ commit, dispatch }, payload) {
       if (payload) {
         commit('setUser', payload.uid);
+        dispatch('loadUserData', payload.uid);
       } else {
         commit('unsetUser');
       }
@@ -56,6 +57,7 @@ export default {
     },
   },
   getters: {
+    userId: state => state.user.uid,
     isUserAuthenticated: state => state.user.isAuthenticated,
   },
 };
