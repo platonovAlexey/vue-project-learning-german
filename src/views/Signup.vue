@@ -14,7 +14,8 @@
             {{error}}
             </v-alert>
             <v-form v-model="valid">
-              <v-text-field prepend-icon="person" name="login" label="E-mail" type="email" required v-model="email" :rules="emailRules"></v-text-field>
+              <v-text-field prepend-icon="person" name="name" label="Имя" type="text" required v-model="name" :rules="nameRules"></v-text-field>
+              <v-text-field prepend-icon="email" name="login" label="E-mail" type="email" required v-model="email" :rules="emailRules"></v-text-field>
               <v-text-field id="password" prepend-icon="lock" name="password" label="Пароль" type="password" required v-model="password" :rules="passwordRules"></v-text-field>
             </v-form>
           </v-card-text>
@@ -32,6 +33,7 @@
   export default {
       data () {
           return {
+              name: null,
               email: null,
               password: null,
               valid: false,
@@ -42,6 +44,9 @@
               passwordRules: [
                 v => !!v || 'Пожалуйста введите пароль',
                 v => (v && v.length >= 6) || 'Пароль слишком короткий - минимум 6 символов'
+              ],
+              nameRules: [
+                v => !!v || 'Пожалуйста введите ваше имя',
               ],
           }
       },
@@ -65,7 +70,7 @@
       },
       methods: {
           signup () {
-              this.$store.dispatch('signUp', {email: this.email, password: this.password})
+              this.$store.dispatch('signUp', {email: this.email, password: this.password, name: this.name})
           }
       }
   }
