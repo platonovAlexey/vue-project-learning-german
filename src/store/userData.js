@@ -16,6 +16,9 @@ export default {
     addUserBook(state, payload) {
       Vue.set(state.userData.books, payload.bookId, payload.book);
     },
+    addUserWord(state, payload) {
+      Vue.set(state.userData.words, payload.wordId, payload.word);
+    },
     addUserBookPart(state, payload) {
       Vue.set(state.userData.books[payload.bookId].parts, payload.partId, { addedDate: payload.timestamp });
     },
@@ -39,6 +42,7 @@ export default {
           const userData = data.exists ? data.data() : defaultUserData;
 
           if (!userData.books) userData.books = {};
+          if (!userData.words) userData.words = {};
 
           // eslint-disable-next-line no-restricted-syntax
           // for (const key in userData.books) {
@@ -69,6 +73,35 @@ export default {
       }, { merge: true })
         .then(() => {
           commit('addUserBook', { bookId: payload, book });
+          commit('setProcessing', false);
+        })
+        .catch(() => {
+          commit('setProcessing', false);
+        });
+    },
+    addUserWord({ commit, getters }, payload) {
+      commit('setProcessing', true);
+      const userDataRef = Vue.$db.collection('userData').doc(getters.userId);
+      const word = {
+        origText: payload.origText,
+        transText: payload.transText,
+        type: payload.type,
+        addedDate: new Date(),
+        bucket: 1,
+        nextShowDate: new Date(),
+      };
+
+      if (payload.origPrefix) {
+        word.origPrefix = payload.origPrefix;
+      }
+
+      userDataRef.set({
+        words: {
+          [payload.key]: word,
+        },
+      }, { merge: true })
+        .then(() => {
+          commit('addUserWord', { wordId: payload.key, word });
           commit('setProcessing', false);
         })
         .catch(() => {

@@ -19,7 +19,7 @@
         <book-part-content :part="part"></book-part-content>
       </v-flex>
       <v-flex xs12 sm10 offset-sm1>
-        <book-part-words :words="part.words"></book-part-words>
+        <book-part-words :data="part.words"></book-part-words>
       </v-flex>
       <v-flex xs12 sm10 offset-sm1 class="text-xs-center">
         <v-dialog v-model="finishDialog" persistent max-width="600px">
