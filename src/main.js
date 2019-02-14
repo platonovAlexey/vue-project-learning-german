@@ -11,11 +11,14 @@ import "firebase/firestore"
 import VuetifyConfirm from 'vuetify-confirm';
 import VueYouTubeEmbed from 'vue-youtube-embed';
 import formattedDate from './filters/formattedDate';
+import { setupBus } from './infrastructure/eventBus';
 
 Vue.use(Vuetify);
 Vue.use(VueYouTubeEmbed);
 
 Vue.config.productionTip = false;
+
+setupBus()
 
 Vue.use(VuetifyConfirm, {
   buttonTrueText: 'Да',
