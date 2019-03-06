@@ -1,4 +1,7 @@
+/* eslint-disable no-plusplus */
 import Vue from 'vue';
+import firebase from 'firebase';
+import { EventBus } from '../infrastructure/eventBus';
 
 const defaultUserData = {
   books: {},
@@ -28,6 +31,15 @@ export default {
     updateUserBookPartFinishInfo(state, payload) {
       Vue.set(state.userData.books[payload.bookId].parts[payload.partId], 'finishedDate', payload.timestamp);
       Vue.set(state.userData.books[payload.bookId].parts[payload.partId], 'rating', payload.rating);
+    },
+    removeUserWord(state, payload) {
+      Vue.delete(state.userData.words, payload);
+      EventBus.notify('userword:updated', payload);
+    },
+    updateUserWord(state, payload) {
+      Vue.set(state.userData.words[payload.wordId], 'bucket', payload.word.bucket);
+      Vue.set(state.userData.words[payload.wordId], 'nextShowDate', payload.word.nextShowDate);
+      EventBus.notify('userword:updated', payload.wordId);
     },
   },
   getters: {
@@ -141,6 +153,32 @@ export default {
             bookId: payload.bookId, partId: payload.partId, timestamp, rating: payload.rating,
           });
         });
+    },
+    processUserWord({ commit, getters }, payload) {
+      const word = getters.userData.words[payload];
+
+      const userDataRef = Vue.$db.collection('userData').doc(getters.userId);
+
+      if (word.bucket === 5) {
+        userDataRef.update({
+          [`words.${payload}`]: firebase.firestore.FieldValue.delete(),
+        })
+          .then(() => {
+            commit('removeUserWord', payload);
+          });
+      } else {
+        let nextShowDate = new Date();
+        nextShowDate = new Date(nextShowDate.setDate((new Date().getDate() + word.bucket * 2)));
+        word.nextShowDate = nextShowDate;
+        word.bucket++;
+
+        userDataRef.set({
+          words: {
+            [payload]: word,
+          },
+        }, { merge: true })
+          .then(() => commit('updateUserWord', { word, wordId: payload }));
+      }
     },
   },
 };
