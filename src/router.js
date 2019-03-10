@@ -15,7 +15,7 @@ import Store from './store';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
@@ -49,8 +49,9 @@ export default new Router({
       path: '/profile',
       name: 'profile',
       component: Profile,
+      meta: { authRequired: true },
       // eslint-disable-next-line no-use-before-define
-      beforeEnter: authGuard,
+      // beforeEnter: authGuard,
     },
     {
       path: '/signin',
@@ -65,6 +66,21 @@ export default new Router({
   ],
 });
 
+router.beforeEach((to, from, next) => {
+  Store.dispatch('initAuth')
+    .then((user) => {
+      if (to.matched.some(route => route.meta.authRequired)) {
+        if (user) {
+          next();
+        } else {
+          next('/signin');
+        }
+      } else {
+        next();
+      }
+    });
+});
+
 // function authGuard(from, to, next) {
 //   if (Store.getters.isUserAuthenticated) {
 //     next();
@@ -73,9 +89,11 @@ export default new Router({
 //   }
 // }
 
-function authGuard(to, from, next) {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) next();
-    else next('/signin');
-  });
-}
+// function authGuard(to, from, next) {
+//   firebase.auth().onAuthStateChanged((user) => {
+//     if (user) next();
+//     else next('/signin');
+//   });
+// }
+
+export default router;

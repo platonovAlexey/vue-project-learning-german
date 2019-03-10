@@ -9,8 +9,12 @@ export default {
       name: null,
       email: null,
     },
+    unsubscribeAuth: null,
   },
   mutations: {
+    setUnsubscribeAuth(state, payload) {
+      state.unsubscribeAuth = payload;
+    },
     setUser(state, payload) {
       state.user.isAuthenticated = true;
       state.user.uid = payload.uid;
@@ -30,6 +34,20 @@ export default {
     },
   },
   actions: {
+    initAuth({ dispatch, commit, state }) {
+      return new Promise((resolve, reject) => {
+        if (state.unsubscribeAuth) {
+          state.unsubscribeAuth();
+        }
+        const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
+          dispatch('stateChanged', user);
+
+          resolve(user);
+        });
+
+        commit('setUnsubscribeAuth', unsubscribe);
+      });
+    },
     signUp({ commit }, payload) {
       commit('setProcessing', true);
       commit('clearError');

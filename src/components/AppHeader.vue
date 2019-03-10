@@ -46,7 +46,9 @@
         methods: {
           signout () {
             this.$confirm('Точно ?', {title: 'Вы уже уходите ?', color: 'info', icon: 'info',}).then(res => {
-              if (res) this.$store.dispatch('signOut')
+              if (res) 
+                this.$store.dispatch('signOut')
+                this.$router.push({name: 'home'})
             })
           }
         },
