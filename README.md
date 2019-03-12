@@ -1,5 +1,7 @@
 # Vue project Learning German
 
+German learning project, [page](https://vue-ads-cars.firebaseapp.com/)
+
 ## Project setup
 ```
 yarn install
