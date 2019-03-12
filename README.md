@@ -1,6 +1,6 @@
 # Vue project Learning German
 
-German learning project, [page](https://vue-ads-cars.firebaseapp.com/)
+German learning project, [page](https://lerninggerman.firebaseapp.com/)
 
 ## Project setup
 ```
